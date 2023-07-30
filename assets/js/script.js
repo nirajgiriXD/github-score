@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    const userErrorResponse = $('#gh-user-error');
     const userContainer = $('#gh-profile__container');
     const userProfile = $('#gh-user-profile-img');
     const userProfileName = $('#gh-user-profile-name');
@@ -16,6 +17,12 @@ $(document).ready(() => {
         e.preventDefault();
         username = query.val();
         if ('' !== username) {
+            const userErrorResponseClose = $('#gh-error-response-close');
+            if (userErrorResponseClose) {
+                userErrorResponseClose.trigger("click");
+            }
+
+            // AJAX for GitHub API
             $.ajax({
                 url: 'https://api.github.com/users/' + username,
                 type: 'GET',
@@ -23,7 +30,11 @@ $(document).ready(() => {
                     updateUserData(response);
                 },
                 error: (response) => {
-                    console.log(response);
+                    const html = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    Invalid User: <strong>${username}</strong>
+                    <button type="button" class="btn-close" id="gh-error-response-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>`;
+                    userErrorResponse.html(html);
                 }
             });
         }
