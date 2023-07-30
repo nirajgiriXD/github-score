@@ -19,7 +19,9 @@
                     <input class="form-control me-2" type="search" id="query" placeholder="GitHub username" aria-label="Search">
                     <button class="btn btn-outline-danger" type="submit" id="search-btn">Search</button>
                 </form>
-                <div class="mt-4" id="gh-profile__container" style="display: none;">
+                <!-- Display error response -->
+                <div id="gh-user-error" class="mt-3"></div>
+                <div class="mt-3" id="gh-profile__container" style="display: none;">
                     <hr class="border mb-3">
                     <div>
                         <!-- Content for the first column -->
