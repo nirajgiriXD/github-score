@@ -13,19 +13,39 @@
 
     <main class="container">
         <div class="flex-container">
-            <div class="flex-box">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="flex-box p-4">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" id="query" placeholder="GitHub username" aria-label="Search">
+                    <!-- <div class="input-group me-2">
+                        <span class="input-group-text" id="basic-addon">https://github.com/</span>
+                        <input type="text" class="form-control" id="query" placeholder="username" aria-describedby="basic-addon" required>
+                    </div> -->
+                    <button class="btn btn-outline-danger" type="submit" id="search-btn">Search</button>
+                </form>
+                <div class="mt-4" id="gh-profile__container" style="display: none;">
+                    <hr class="border mb-3">
+                    <div>
                         <!-- Content for the first column -->
+                        <center>
+                            <a href="" id="gh-user-profile-link" target="_blank">
+                                <img src="" alt="GitHub user profile" class="rounded" id="gh-user-profile-img">
+                                <h5 class="text-center mt-3" id="gh-user-profile-name"></h5>
+                                <span>Created: <span class="text-center" id="gh-iser-profile-created"></span></span>
+                            </a>
+                        </center>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
+                    <hr class="border my-3">
+                    <div>
                         <!-- Content for the second column -->
+                        <div>Followers: <span id="gh-user-profile-followers"></span></div>
+                        <div>Following: <span id="gh-user-profile-following"></span></div>
+                        <div>Public Gists: <span id="gh-user-profile-gists"></span></div>
+                        <div>Public Repositories: <span id="gh-user-profile-repositories"></span></div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
+                    <hr class="border my-3">
+                    <div>
                         <!-- Content for the third column -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <!-- Content for the fourth column -->
+                        <div>Score: <span id="gh-user-profile-score"></span></div>
                     </div>
                 </div>
             </div>
