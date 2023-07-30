@@ -13,13 +13,9 @@
 
     <main class="container">
         <div class="flex-container">
-            <div class="flex-box p-4">
+            <div class="flex-box p-3">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" id="query" placeholder="GitHub username" aria-label="Search">
-                    <!-- <div class="input-group me-2">
-                        <span class="input-group-text" id="basic-addon">https://github.com/</span>
-                        <input type="text" class="form-control" id="query" placeholder="username" aria-describedby="basic-addon" required>
-                    </div> -->
                     <button class="btn btn-outline-danger" type="submit" id="search-btn">Search</button>
                 </form>
                 <div class="mt-4" id="gh-profile__container" style="display: none;">
@@ -37,10 +33,12 @@
                     <hr class="border my-3">
                     <div>
                         <!-- Content for the second column -->
-                        <div>Followers: <span id="gh-user-profile-followers"></span></div>
-                        <div>Following: <span id="gh-user-profile-following"></span></div>
-                        <div>Public Gists: <span id="gh-user-profile-gists"></span></div>
-                        <div>Public Repositories: <span id="gh-user-profile-repositories"></span></div>
+                        <ul>
+                            <li>Followers: <span id="gh-user-profile-followers"></span></li>
+                            <li>Following: <span id="gh-user-profile-following"></span></li>
+                            <li>Public Gists: <span id="gh-user-profile-gists"></span></li>
+                            <li>Public Repositories: <span id="gh-user-profile-repositories"></span></li>
+                        </ul>
                     </div>
                     <hr class="border my-3">
                     <div>
